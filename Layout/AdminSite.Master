@@ -1,0 +1,204 @@
+﻿<%@ Master Language="C#" AutoEventWireup="true" CodeBehind="AdminSite.master.cs" Inherits="SupremeArt.Layout.AdminSite" %>
+
+<!doctype html>
+<html class="no-js" lang="en">
+
+<head runat="server">
+    <meta charset="utf-8">
+    <meta http-equiv="x-ua-compatible" content="ie=edge">
+    <title>Supreme-Admin</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="shortcut icon" type="image/png" href="../assets/images/icon/favicon.ico">
+    <link rel="stylesheet" href="../admin/assets/css/bootstrap.min.css">
+    <link rel="stylesheet" href="../admin/assets/css/font-awesome.min.css">
+    <link rel="stylesheet" href="../admin/assets/css/themify-icons.css">
+    <link rel="stylesheet" href="../admin/assets/css/metisMenu.css">
+    <link rel="stylesheet" href="../admin/assets/css/owl.carousel.min.css">
+    <link rel="stylesheet" href="../admin/assets/css/slicknav.min.css">
+    <!-- amchart css -->
+    <link rel="stylesheet" href="https://www.amcharts.com/lib/3/plugins/export/export.css" type="text/css" media="all" />
+    <!-- others css -->
+    <link rel="stylesheet" href="../admin/assets/css/typography.css">
+    <link rel="stylesheet" href="../admin/assets/css/default-css.css">
+    <link rel="stylesheet" href="../admin/assets/css/styles.css">
+    <link rel="stylesheet" href="../admin/assets/css/responsive.css">
+    <!-- modernizr css -->
+    <script src="../admin/assets/js/vendor/modernizr-2.8.3.min.js"></script>
+      <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <!-- Start datatable css -->
+    <link rel="stylesheet" type="text/css" href="https://cdn.datatables.net/1.10.19/css/jquery.dataTables.css">
+    <link rel="stylesheet" type="text/css" href="https://cdn.datatables.net/1.10.18/css/dataTables.bootstrap4.min.css">
+    <link rel="stylesheet" type="text/css" href="https://cdn.datatables.net/responsive/2.2.3/css/responsive.bootstrap.min.css">
+    <link rel="stylesheet" type="text/css" href="https://cdn.datatables.net/responsive/2.2.3/css/responsive.jqueryui.min.css"> 
+   
+
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.5.0/font/bootstrap-icons.css">
+  
+</head>
+<body>
+    <div id="preloader">
+        <div class="loader"></div>
+       
+    </div>
+   
+    <!-- preloader area end -->
+    <!-- page container area start -->
+    <div class="page-container">
+        <!-- sidebar menu area start -->
+        <div class="sidebar-menu">
+            <div class="sidebar-header">
+                <div class="logo">
+                    <a href="#">
+        <h3 style="color:#ffffff;">Supreme Art</h3>
+    </a>
+                </div>
+            </div>
+            <div class="main-menu">
+                <div class="menu-inner">
+                    <nav>
+                        <ul class="metismenu" id="menu">
+                           <li class=""><a href="Dashboard.aspx"><i class="ti-receipt"></i><span>Dashboard</span></a></li>
+                            <li class=""><a href="adminList.aspx"><i class="ti-user"></i><span>Admins</span></a></li>
+                            <li class=""><a href="custList.aspx"><i class="ti-user"></i><span>Buyers</span></a></li>
+                            <li class=""><a href="sellerList.aspx"><i class="ti-user"></i><span>Sellers</span></a></li>
+                            <li class=""><a href="productList.aspx"><i class="ti-harddrive"></i><span>Products</span></a></li>
+                            <li class=""><a href="orderList.aspx"><i class="ti-agenda"></i><span>Orders</span></a></li>
+                            <li class=""><a href="Issues.aspx"><i class="ti-layers-alt"></i><span>Issues Reported</span></a></li>
+                             
+
+                            <!-- <li><a href="{{url('form')}}"><i class="ti-receipt"></i> <span>Purchase Request</span></a></li> -->
+                            
+           
+                           
+                        </ul>
+                    </nav>
+                </div>
+            </div>
+        </div>
+        <!-- sidebar menu area end -->
+        <!-- main content area start -->
+        <div class="main-content">
+            <!-- header area start -->
+            <div class="header-area">
+                <div class="row align-items-center">
+                    <!-- nav and search button -->
+                    <div class="col-md-6 col-sm-8 clearfix">
+                        <div class="nav-btn pull-left">
+                            <span></span>
+                            <span></span>
+                            <span></span>
+                        </div>
+                       
+                        </ul>
+                    </div>
+                </div>
+            </div>
+            <!-- header area end -->
+            <!-- page title area start -->
+            
+            <div class="page-title-area">
+                <div class="row align-items-center">
+                    <div class="col-sm-6">
+                        <div class="breadcrumbs-area clearfix">
+                        <h4 class="page-title pull-left">
+                            <asp:ContentPlaceHolder ID="title" runat="server">
+
+                            </asp:ContentPlaceHolder>
+                        </h4>
+                        <ul class="breadcrumbs pull-left">
+                            
+                        </ul>
+                        </div>
+                    </div>
+                    
+                    <div class="col-sm-6 clearfix">
+                        <div class="user-profile pull-right">
+                            <img class="avatar user-thumb" src="../admin/assets/images/author/avatar.png" alt="avatar">
+                            
+                            <h4 class="user-name dropdown-toggle" data-toggle="dropdown"><span id="adminName" runat="server"><%= Session["admin"] %></span><i class="fa fa-angle-down"></i></h4>
+                            
+                            <div class="dropdown-menu">
+                                <!--<a class="dropdown-item" href="../profile.aspx">Profile</a>
+                                <hr />-->
+                                <a class="dropdown-item" href="../Logout.aspx">Log Out</a>
+
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+    <form id="form1" runat="server">
+        <div>
+            <asp:ContentPlaceHolder ID="content" runat="server">
+
+            </asp:ContentPlaceHolder>
+        </div>
+    </form>
+
+            <!-- jquery latest version -->
+    <script src="../admin/assets/js/vendor/jquery-2.2.4.min.js"></script>
+    <!-- bootstrap 4 js -->
+    <script src="../admin/assets/js/popper.min.js"></script>
+    <script src="../admin/assets/js/bootstrap.min.js"></script>
+    <script src="../admin/assets/js/owl.carousel.min.js"></script>
+    <script src="../admin/assets/js/metisMenu.min.js"></script>
+    <script src="../admin/assets/js/jquery.slimscroll.min.js"></script>
+    <script src="../admin/assets/js/jquery.slicknav.min.js"></script>
+
+    <!-- start chart js -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.7.2/Chart.min.js"></script>
+    <!-- start highcharts js -->
+    <script src="https://code.highcharts.com/highcharts.js"></script>
+    <!-- start zingchart js -->
+    <script src="https://cdn.zingchart.com/zingchart.min.js"></script>
+    <script>
+    zingchart.MODULESDIR = "https://cdn.zingchart.com/modules/";
+    ZC.LICENSE = ["569d52cefae586f634c54f86dc99e6a9", "ee6b7db5b51705a13dc2339db3edaf6d"];
+    </script>
+    <!-- all line chart activation -->
+    <script src="../admin/assets/js/line-chart.js"></script>
+    <!-- all pie chart -->
+    <script src="../admin/assets/js/pie-chart.js"></script>
+    <!-- others plugins -->
+    <script src="../admin/assets/js/plugins.js"></script>
+    <script src="../admin/assets/js/scripts.js"></script>
+
+          <!-- Start datatable js -->
+    <script src="https://cdn.datatables.net/1.10.19/js/jquery.dataTables.js"></script>
+    <script src="https://cdn.datatables.net/1.10.18/js/jquery.dataTables.min.js"></script>
+    <script src="https://cdn.datatables.net/1.10.18/js/dataTables.bootstrap4.min.js"></script>
+    <script src="https://cdn.datatables.net/responsive/2.2.3/js/dataTables.responsive.min.js"></script>
+    <script src="https://cdn.datatables.net/responsive/2.2.3/js/responsive.bootstrap.min.js"></script>
+    <script>
+        $(document).on("load",function () {
+            //$('.page-container').toggleClass('sbar_collapsed');
+            // $('.form-container').toggleClass('sbar_collapsed');
+            //  $('.container').toggleClass('sbar_collapsed');
+
+        })
+
+        $(window).on('load', function () {
+            activeOnMenu();
+        })
+        function activeOnMenu() {
+            const currentLocation = location.href;
+            const menuItem = document.querySelectorAll('a');
+            const menuLi = document.querySelectorAll('li');
+            const menuLength = menuItem.length;
+            for (let i = 0; i < menuLength; i++) {
+                if (menuItem[i].href === currentLocation) {
+                   
+                    
+                        menuLi[i-1].className = "active";
+
+                    
+                }
+            }
+        }
+
+
+
+    </script>
+
+</body>
+</html>

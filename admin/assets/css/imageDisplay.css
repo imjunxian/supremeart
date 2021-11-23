@@ -1,0 +1,26 @@
+﻿.image_container {
+    height: 300px;
+    width: 300px;
+    border-radius: 6px;
+    overflow: hidden;
+    margin: 10px;
+}
+
+    .image_container img {
+        height: 100%;
+        width: auto;
+        object-fit: cover;
+    }
+
+    .image_container span {
+        top: -6px;
+        right: 8px;
+        color: #e6e6e6;
+        font-size: 28px;
+        font-weight: normal;
+        cursor: pointer;
+    }
+
+#remove {
+    color: red;
+}
